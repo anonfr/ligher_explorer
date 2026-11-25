@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root,
+:host {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Exact Lighter Explorer Design Tokens (from app.lighter.xyz) */
+  --color-bg: #06060c;
+  --color-surface: oklch(18.5% 0.012 285);
+  --color-surface-2: oklch(19.3% 0.008 286);
+  --color-fill: oklch(100% 0 0 / 0.05);
+  --color-fill-hover: oklch(100% 0 0 / 0.085);
+  --color-line: oklch(100% 0 0 / 0.07);
+  --color-line-strong: oklch(100% 0 0 / 0.13);
+  --color-elevated: oklch(29.1% 0.009 286);
+
+  --color-ink: oklch(96.4% 0 0);
+  --color-dim: oklch(74.1% 0.005 258);
+  --color-meta: oklch(66% 0.004 286);
+  --color-muted: oklch(64.5% 0.006 275);
+  --color-faint: oklch(56% 0.006 286);
+
+  --color-up: oklch(82.8% 0.186 159);
+  --color-up-strong: oklch(76.3% 0.171 159);
+  --color-up-bright: oklch(90% 0.163 161);
+  --color-up-fill: oklch(32.7% 0.094 158 / 0.45);
+
+  --color-down: oklch(66% 0.19 19);
+  --color-down-bright: oklch(77% 0.12 19);
+  --color-down-soft: oklch(71% 0.155 19);
+  --color-down-fill: oklch(33.8% 0.128 24 / 0.45);
+
+  --color-warn: oklch(84% 0.172 84);
+  --color-link: oklch(85.7% 0.07 271.6);
+  --color-vip: #1fd18f;
+  --color-diamond: #dcf2ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.lighter-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+}
+
+.lighter-card-2 {
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+}
+
+.lighter-pill {
+  background-color: var(--color-fill);
+  border: 1px solid var(--color-line);
+}
+
+.lighter-pill:hover {
+  background-color: var(--color-fill-hover);
+  border-color: var(--color-line-strong);
+}
+
+@keyframes tradeFlash {
+  0% {
+    background-color: oklch(82.8% 0.186 159 / 0.16);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.animate-trade-flash {
+  animation: tradeFlash 1.4s ease-out;
+}
+
+/* Custom subtle scrollbars matching dark terminal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(100% 0 0 / 0.12);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(100% 0 0 / 0.22);
+}
