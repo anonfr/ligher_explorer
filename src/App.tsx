@@ -631,6 +631,25 @@ export function App() {
         )}
       </main>
 
+      <footer className="border-t border-[var(--color-line)] bg-[#06060c]/80">
+        <div className="mx-auto flex max-w-[1480px] flex-wrap items-center justify-between gap-2 px-4 py-3 text-[11.5px] text-[var(--color-meta)] sm:px-6">
+          <span>
+            Lighter &amp; Lighter RH Explorer · Read-only live address tracker
+          </span>
+          <a
+            href="https://x.com/anonfrxbt"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-2.5 py-1 font-mono-num text-[11px] text-[var(--color-dim)] hover:border-[var(--color-line-strong)] hover:text-[var(--color-ink)] transition-colors"
+          >
+            <span>made by</span>
+            <span className="font-semibold text-[var(--color-up)]">anonfrxbt</span>
+            <span className="text-[var(--color-faint)]">·</span>
+            <span className="text-[var(--color-link)]">x.com/anonfrxbt</span>
+          </a>
+        </div>
+      </footer>
+
       <WatchlistDrawer
         open={watchlistOpen}
         onClose={() => setWatchlistOpen(false)}
